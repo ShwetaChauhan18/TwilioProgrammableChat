@@ -29,6 +29,12 @@ class ChatClientManager : AccessManager.Listener, AccessManager.TokenUpdateListe
         }
     }
 
+    fun removeClientListener(){
+        if(this.mChatClient!=null){
+            this.mChatClient?.removeListener()
+        }
+    }
+
     fun getChatClient(): ChatClient? {
         if (this.mChatClient != null)
             return this.mChatClient
