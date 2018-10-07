@@ -3,6 +3,7 @@ package com.example.shweta.twilioprogrammablechat.common
 import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.Window
 import com.example.shweta.twilioprogrammablechat.R
 
@@ -33,6 +34,16 @@ open class Utils {
             pd.setContentView(view)
             return pd
 
+        }
+
+        /**
+         *  Show snackbar
+         *  @param view - Main layout
+         *  @param message - message which show
+         */
+        @JvmStatic
+        fun showSnackBar(view: View, message: String) {
+           // Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
         }
 
     }

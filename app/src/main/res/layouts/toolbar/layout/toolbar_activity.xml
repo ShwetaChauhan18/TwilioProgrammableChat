@@ -12,7 +12,6 @@
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     app:titleTextAppearance="?android:attr/textAppearanceMedium" >
 
-
     <TextView
         android:id="@+id/toolbar_title"
         android:layout_width="wrap_content"

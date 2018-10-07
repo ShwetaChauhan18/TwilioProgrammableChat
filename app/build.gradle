@@ -58,6 +58,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation 'com.intuit.sdp:sdp-android:1.0.5'
+    implementation 'com.blankj:utilcode:1.9.3'
 
     // Twilio
     implementation 'com.twilio:chat-android:3.1.0'
