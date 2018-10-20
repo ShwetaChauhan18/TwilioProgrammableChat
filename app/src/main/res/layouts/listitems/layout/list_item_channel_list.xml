@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_6sdp"
+        android:paddingStart="@dimen/_6sdp"
+        android:paddingTop="@dimen/_3sdp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/imgProfileUser"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_camera_icon"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/text_group_channel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:maxWidth="@dimen/_140sdp"
+                android:text="Anna Bluiasdfasdfasdfasdfasdfasdfasdfasdfafm"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileUser"
+                app:layout_constraintTop_toTopOf="@+id/imgProfileUser" />
+
+
+            <TextView
+                android:id="@+id/text_group_channel_list_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="This sounded nonsense to Alice, so she said nothing, but set off at her being blah blah"
+                android:textColor="@color/color_time_grey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@+id/text_group_channel_list_unread_count"
+                app:layout_constraintStart_toEndOf="@+id/imgProfileUser"
+                app:layout_constraintTop_toBottomOf="@+id/text_group_channel_name" />
+
+
+            <TextView
+                android:id="@+id/chatdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:maxLines="1"
+                android:text="9999/99/99"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_group_channel_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_group_channel_name" />
+
+            <TextView
+                android:id="@+id/text_group_channel_list_unread_count"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/grade_button_selected_state"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_group_channel_list_message"
+                app:layout_constraintEnd_toEndOf="@+id/chatdate"
+                app:layout_constraintTop_toTopOf="@+id/text_group_channel_list_message" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

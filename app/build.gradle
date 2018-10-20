@@ -7,11 +7,11 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.shweta.twilioprogrammablechat"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
@@ -33,6 +33,7 @@ android {
                             'src/main/res/layouts/fragment',
                             'src/main/res/layouts/toolbar',
                             'src/main/res/layouts/extra',
+                            'src/main/res/layouts/listitems',
                             'src/main/res/layouts',
                             'src/main/res'
                     ]

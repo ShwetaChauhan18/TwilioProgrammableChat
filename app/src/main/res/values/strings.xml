@@ -3,4 +3,5 @@
 
     <!--Twilio-->
     <string name="default_channel_name">General Channel</string>
+    <string name="txt_no_msg_found">You have not received any messages.</string>
 </resources>

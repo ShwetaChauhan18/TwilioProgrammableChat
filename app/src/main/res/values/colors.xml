@@ -8,4 +8,7 @@
     <color name="blue_text">#ff3232</color>
 
     <color name="color_btn_red">#FE5A4C</color>
+
+    <color name="color_black">#212121</color>
+    <color name="color_time_grey">#8e8e8e</color>
 </resources>
