@@ -1,5 +1,6 @@
 package com.example.shweta.twilioprogrammablechat.twilio
 
+import com.example.shweta.twilioprogrammablechat.MyApplication
 import com.example.shweta.twilioprogrammablechat.R
 import com.twilio.chat.Channel
 

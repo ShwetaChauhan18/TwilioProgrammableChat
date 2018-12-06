@@ -4,4 +4,12 @@
     <!--Twilio-->
     <string name="default_channel_name">General Channel</string>
     <string name="txt_no_msg_found">You have not received any messages.</string>
+    <string name="generic_error">An error occurred, please try again</string>
+
+    <string name="leave_channel_alert">Are you sure you want to delete this channel?</string>
+    <string name="leave_channel">Delete</string>
+    <string name="btn_yes">Yes</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <string name="permission_from_setting_storage">You need to allow access to Storage permission</string>
 </resources>

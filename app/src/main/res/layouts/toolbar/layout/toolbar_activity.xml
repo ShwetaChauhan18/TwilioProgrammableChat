@@ -21,5 +21,4 @@
         style="@style/ToolBarTextViewHelveticaNeue"
         app:titleTextAppearance="?android:attr/textAppearanceLarge"/>
 
-
 </android.support.v7.widget.Toolbar>

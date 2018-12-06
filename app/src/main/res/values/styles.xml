@@ -14,4 +14,14 @@
         <item name="android:textSize">@dimen/_15sdp</item>
     </style>
 
+    <style name="ToolBarDefaultMediumTextView">
+        <item name="android:textColor">@color/default_text</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+
+    <style name="Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+    </style>
+
 </resources>

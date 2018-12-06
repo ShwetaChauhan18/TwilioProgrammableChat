@@ -11,4 +11,6 @@
 
     <color name="color_black">#212121</color>
     <color name="color_time_grey">#8e8e8e</color>
+
+    <color name="color_btn_blue">#4976a3</color>
 </resources>

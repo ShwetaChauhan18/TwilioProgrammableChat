@@ -2,7 +2,17 @@ package com.example.shweta.twilioprogrammablechat.twilio
 
 import android.os.Handler
 import android.os.Looper
-import com.twilio.chat.*
+import com.example.shweta.twilioprogrammablechat.MyApplication
+import com.twilio.chat.CallbackListener
+import com.twilio.chat.Channel
+import com.twilio.chat.ChannelDescriptor
+import com.twilio.chat.Channels
+import com.twilio.chat.ChatClient
+import com.twilio.chat.ChatClientListener
+import com.twilio.chat.ErrorInfo
+import com.twilio.chat.Paginator
+import com.twilio.chat.StatusListener
+import com.twilio.chat.User
 import org.json.JSONObject
 import java.util.*
 
@@ -54,12 +64,12 @@ class ChannelManager : ChatClientListener {
         return this.defaultChannelName
     }
 
-    fun populateChannels(identifier: String?, listener: LoadChannelListener) {
-        if (this.mChatClientManager == null || mChannelHandlers.containsKey(identifier)) {
+    fun populateChannels(listener: LoadChannelListener) {
+        if (this.mChatClientManager == null || this.isRefreshingChannels) {
             return
         }
         this.isRefreshingChannels = true
-        addChannelHandler(identifier, listener)
+       // addChannelHandler(identifier, listener)
 
         //handler.post {
         mChannelsObject = mChatClientManager?.getChatClient()!!.channels
@@ -67,7 +77,7 @@ class ChannelManager : ChatClientListener {
         mChannelsObject.getUserChannelsList(object : CallbackListener<Paginator<ChannelDescriptor>>() {
             override fun onSuccess(channelDescriptorPaginator: Paginator<ChannelDescriptor>) {
                 //this@ChannelManager.isRefreshingChannels = false
-                extractChannelsFromPaginatorAndPopulate(channelDescriptorPaginator, mChannelHandlers.get(identifier)!!)
+                extractChannelsFromPaginatorAndPopulate(channelDescriptorPaginator, listener)
             }
         })
         //}

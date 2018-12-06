@@ -1,13 +1,15 @@
 package com.example.shweta.twilioprogrammablechat
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import com.example.shweta.twilioprogrammablechat.common.BaseActivityMVVM
-import com.example.shweta.twilioprogrammablechat.common.Utils
+import com.example.shweta.twilioprogrammablechat.common.SessionManager
 import com.example.shweta.twilioprogrammablechat.databinding.ActivityLoginBinding
 import com.example.shweta.twilioprogrammablechat.twilio.ChatClientManager
-import com.example.shweta.twilioprogrammablechat.twilio.MyApplication
 import com.example.shweta.twilioprogrammablechat.twilio.TaskCompletionListener
+import kotlinx.android.synthetic.main.toolbar_activity.toolbar
+import kotlinx.android.synthetic.main.toolbar_activity.toolbar_title
 
 class LoginActivity : BaseActivityMVVM<ActivityLoginBinding>() {
 
@@ -15,23 +17,53 @@ class LoginActivity : BaseActivityMVVM<ActivityLoginBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setAndBindContentView(savedInstanceState, R.layout.activity_login)
+        binding.login = this
+
+        mClientManager = MyApplication.instance.clientManager
+        setToolbar()
+
     }
 
     override fun initialization() {
         mClientManager = MyApplication.instance.clientManager
     }
 
-    private fun initializeTwilioChatClient() {
-        mClientManager.connectClient(object:TaskCompletionListener<Void,String>{
-            override fun onSuccess(t: Void?) {
+    private fun setToolbar() {
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.title = null
 
+        toolbar_title.text = "Login"
+    }
+
+    fun onClickLogin() {
+        val idChosen = binding.edtUserName.text.toString()
+
+        SessionManager.instance.createLoginSession(idChosen)
+        initializeTwilioChatClient()
+
+    }
+
+    private fun initializeTwilioChatClient() {
+        mClientManager.connectClient(object : TaskCompletionListener<Void, String> {
+            override fun onSuccess(t: Void?) {
+                Log.d("Success",".....Sucessssssss")
+                showChannelChatActivity()
+                //SharedPrefsUtils.setBooleanPreference(this@LoginActivity, SharedPrefsUtils.PREFERENCE_KEY_TWILIO_CLIENT_CONNECTED, true)
             }
 
             override fun onError(errorMessage: String) {
-                //Utils.showSnackBar(binding.rootView, "Error in client initialization: $errorMessage")
+                Log.e("ClientError", "Error in initialization: $errorMessage")
             }
-
         })
+    }
+
+    private fun showChannelChatActivity() {
+        val launchIntent = Intent()
+        launchIntent.setClass(applicationContext, ChannelListActivity::class.java)
+        startActivity(launchIntent)
+        finish()
     }
 }

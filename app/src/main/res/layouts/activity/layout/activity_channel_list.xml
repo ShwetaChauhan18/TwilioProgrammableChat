@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.shweta.twilioprogrammablechat.ChannelListActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -10,8 +9,45 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context="com.example.shweta.twilioprogrammablechat.ChannelListActivity">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title=""
+            app:titleTextAppearance="?android:attr/textAppearanceMedium">
+
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/ToolBarDefaultMediumTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                app:titleTextAppearance="?android:attr/textAppearanceLarge"
+                tools:text="Toolbar Title" />
+
+            <!--<TextView
+                android:id="@+id/imgContact"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/bg_card"
+                android:gravity="center"
+                android:text="New"
+                android:textColor="@color/colorPrimaryDark" />-->
+
+        </android.support.v7.widget.Toolbar>
 
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/swipe_layout_group_channel_list"
@@ -20,7 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_group_channel_list"
@@ -36,8 +72,8 @@
             android:id="@+id/txtNoRecordFound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_no_msg_found"
             android:drawableTop="@drawable/ic_no_message_found"
+            android:text="@string/txt_no_msg_found"
             android:textAppearance="?android:attr/textAppearanceMedium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

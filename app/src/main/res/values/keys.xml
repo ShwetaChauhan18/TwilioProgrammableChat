@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Token Request URL -->
+    <!-- if using a real device, you'll need an exposed url (try ngrok) -->
+    <string name="token_url">"https://rose-bonobo-9306.twil.io/chat-token"</string>
+</resources>

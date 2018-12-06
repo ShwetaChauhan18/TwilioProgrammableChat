@@ -1,14 +1,13 @@
-package com.example.shweta.twilioprogrammablechat.twilio
+package com.example.shweta.twilioprogrammablechat
 
 import android.app.Application
+import com.example.shweta.twilioprogrammablechat.twilio.ChatClientManager
 
 /**
  * Created by Shweta on 30-09-2018.
  */
 class MyApplication : Application() {
     companion object {
-        var mGetRequestLastSeen = ""
-        var isHomeActivityActive = false
 
         lateinit var instance: MyApplication
             private set
